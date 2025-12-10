@@ -1,0 +1,596 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+    --gray-medium: #808080;
+    --gray-dark: #333333;
+    --spacing-unit: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white);
+    border-bottom: 1px dashed var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 0.1em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--gray-medium);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--black);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--white);
+    padding: 8rem var(--spacing-unit) 6rem;
+    border-bottom: 1px dashed var(--black);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-medium);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--gray-medium);
+    max-width: 700px;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: dashed var(--black);
+    background-size: 10px 1px;
+    background-position: 0 0;
+}
+
+/* Serviço Section */
+.servico {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--white);
+    border-bottom: 1px dashed var(--black);
+}
+
+.servico h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.servico-intro {
+    max-width: 900px;
+    margin-bottom: 4rem;
+}
+
+.servico-intro p {
+    font-size: 1.05rem;
+    color: var(--gray-medium);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.servico-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.servico-card:nth-child(4) {
+    grid-column: 2;
+    margin-top: 1rem;
+}
+
+.servico-card {
+    padding: 2rem;
+    border-left: 2px solid var(--black);
+    background-color: var(--gray-light);
+}
+
+.servico-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.servico-card p {
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Escopo Section */
+.escopo {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--white);
+    border-bottom: 1px dashed var(--black);
+}
+
+.escopo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.section-intro {
+    color: var(--gray-medium);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.timeline {
+    margin: 3rem 0;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--black);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.timeline-title {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.timeline-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-body li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+}
+
+.timeline-body li:before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.bonus-section {
+    background-color: var(--gray-light);
+    padding: 2.5rem;
+    border-left: 3px solid var(--black);
+    margin-top: 3rem;
+}
+
+.bonus-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.bonus-section p {
+    color: var(--gray-medium);
+    line-height: 1.8;
+}
+
+/* Investimento Section */
+.investimento {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--white);
+    border-bottom: 1px dashed var(--black);
+}
+
+.investimento h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.investimento-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.investimento-option {
+    padding: 2rem;
+    background-color: var(--gray-light);
+    border: 1px solid var(--black);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.investimento-option:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.investimento-option.featured {
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0.3rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.investimento-option.featured .badge {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.investimento-option h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    letter-spacing: -0.02em;
+}
+
+.investimento-option p {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+}
+
+.investimento-option.featured p {
+    color: var(--gray-light);
+}
+
+.investimento-option:hover p {
+    color: var(--gray-light);
+}
+
+.investimento-note {
+    background-color: var(--gray-light);
+    padding: 2rem;
+    border-left: 2px solid var(--black);
+    margin-top: 2rem;
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* ROI Section */
+.roi {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--white);
+    border-bottom: 1px dashed var(--black);
+}
+
+.roi h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.roi-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.roi-metric {
+    background-color: var(--gray-light);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--black);
+}
+
+.roi-metric.highlight {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.roi-label {
+    color: var(--gray-medium);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.roi-metric.highlight .roi-label {
+    color: var(--gray-light);
+}
+
+.roi-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.roi-analysis {
+    background-color: var(--gray-light);
+    padding: 2.5rem;
+    border-left: 3px solid var(--black);
+    margin-top: 3rem;
+}
+
+.roi-analysis h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.roi-analysis p {
+    color: var(--gray-medium);
+    line-height: 1.8;
+}
+
+/* CTA Section */
+.cta {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--white);
+    text-align: center;
+    border-bottom: 1px dashed var(--black);
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.cta > .container > p {
+    font-size: 1.05rem;
+    color: var(--gray-medium);
+    margin-bottom: 2rem;
+}
+
+
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--gray-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--black);
+    border: 2px solid var(--black);
+}
+
+.btn-secondary:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.cta-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--white);
+    color: var(--gray-medium);
+    padding: 2rem var(--spacing-unit);
+    text-align: center;
+    border-top: 1px dashed var(--black);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .servico h2,
+    .escopo h2,
+    .investimento h2,
+    .roi h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 1.8rem;
+    }
+
+    .servico-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servico-card:nth-child(4) {
+        grid-column: 1;
+    }
+
+    .investimento-options,
+    .roi-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .investimento-options {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-form {
+        padding: 1.5rem;
+    }
+}
